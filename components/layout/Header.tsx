@@ -37,11 +37,7 @@ export default function Header() {
 
   return (
     <header
-      className={`fixed top-0 left-0 w-full z-50 transition-colors duration-500 ${
-        scrolled
-          ? "bg-white/0 backdrop-blur-md shadow-none"
-          : "bg-white shadow-sm"
-      }`}
+      className="fixed top-0 left-0 w-full z-50 bg-white shadow-sm transition-colors duration-500"
     >
       <div className="max-w-7xl mx-auto flex items-center justify-between px-6 py-4">
         {/* Logo and tagline */}
@@ -66,12 +62,10 @@ export default function Header() {
         </nav>
         {/* Book Now Button (Desktop) */}
         <a
-          href="#"
-          className={`ml-4 px-8 py-3 rounded-full font-semibold shadow transition-colors duration-500 text-base border hidden md:inline-block ${
-            scrolled
-              ? "bg-[#0072bc] text-white border-[#0072bc]"
-              : "bg-white text-gray-900 border-white hover:bg-gray-100"
-          }`}
+          href="https://www.booking.com/"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="ml-4 px-8 py-3 rounded-full font-semibold shadow transition-colors duration-500 text-base border hidden md:inline-block bg-[#0072bc] text-white border-[#0072bc] hover:bg-[#005fa3]"
         >
           Book Now
         </a>
@@ -110,8 +104,10 @@ export default function Header() {
             </a>
           ))}
           <a
-            href="#"
-            className="mt-6 px-8 py-3 rounded-full font-semibold shadow transition-colors duration-500 text-lg border bg-[#0072bc] text-white border-[#0072bc]"
+            href="https://www.booking.com/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="mt-6 px-8 py-3 rounded-full font-semibold shadow transition-colors duration-500 text-lg border bg-[#0072bc] text-white border-[#0072bc] hover:bg-[#005fa3]"
             onClick={() => setMenuOpen(false)}
           >
             Book Now

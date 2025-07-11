@@ -43,22 +43,22 @@ export default function Hero() {
         transition={{ duration: 0.9, ease: "easeOut" }}
         className="relative z-10 flex flex-col items-center justify-center text-center px-3 sm:px-4"
       >
-        <h1 className="text-white text-2xl xs:text-3xl sm:text-4xl md:text-6xl font-bold leading-tight drop-shadow-lg mb-4 sm:mb-6">
+        <h1 className="text-white text-3xl xs:text-4xl sm:text-5xl md:text-7xl font-bold leading-tight drop-shadow-lg mb-5 sm:mb-7">
           A tranquil sanctuary<br />by the lagoon.
         </h1>
-        <p className="text-white text-base xs:text-lg sm:text-xl font-medium mb-6 sm:mb-8 drop-shadow max-w-xs xs:max-w-md sm:max-w-xl mx-auto">
+        <p className="text-white text-lg xs:text-xl sm:text-2xl font-medium mb-7 sm:mb-9 drop-shadow max-w-xs xs:max-w-md sm:max-w-xl mx-auto">
           Experience perfect serenity at <span className="font-bold">LORD Resort</span>
         </p>
-        <div className="flex flex-col sm:flex-row gap-4 justify-center items-center w-full max-w-xs xs:max-w-md sm:max-w-none mx-auto">
+        <div className="flex flex-col sm:flex-row gap-5 justify-center items-center w-full max-w-xs xs:max-w-md sm:max-w-none mx-auto">
           <a
             href="#"
-            className="bg-white text-gray-900 rounded-full px-8 py-3 font-medium text-base shadow hover:bg-gray-100 transition text-center"
+            className="bg-white text-gray-900 rounded-full px-10 py-4 font-medium text-lg shadow hover:bg-gray-100 transition text-center"
           >
             Book Your Stay
           </a>
           <a
             href="#"
-            className="border border-white text-white rounded-full px-8 py-3 font-medium text-base shadow hover:bg-white/10 transition text-center"
+            className="border border-white text-white rounded-full px-10 py-4 font-medium text-lg shadow hover:bg-white/10 transition text-center"
           >
             Explore Experiences
           </a>

@@ -53,26 +53,26 @@ export default function Gallery() {
   const filtered = filter === "all" ? EXPERIENCES : EXPERIENCES.filter(e => e.category === filter);
 
   return (
-    <section className="max-w-7xl mx-auto px-4 py-20">
-      <div className="mb-10 text-center">
+    <section className="max-w-7xl mx-auto px-3 xs:px-4 sm:px-6 py-10 xs:py-14 sm:py-20">
+      <div className="mb-8 xs:mb-10 text-center">
         <span className="uppercase text-xs tracking-widest text-blue-600 font-semibold mb-2 block">Experience Gallery</span>
-        <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-2 leading-tight">Capture the Moment</h2>
-        <h3 className="text-2xl font-light text-blue-700 mb-4">Share the Experience</h3>
+        <h2 className="text-2xl xs:text-3xl sm:text-4xl md:text-5xl font-bold text-gray-900 mb-2 leading-tight">Capture the Moment</h2>
+        <h3 className="text-lg xs:text-xl sm:text-2xl font-light text-blue-700 mb-3 xs:mb-4">Share the Experience</h3>
       </div>
       {/* Filters */}
-      <div className="flex justify-center gap-3 mb-10">
+      <div className="flex flex-wrap justify-center gap-2 xs:gap-3 mb-8 xs:mb-10">
         {FILTERS.map(f => (
           <button
             key={f.value}
             onClick={() => setFilter(f.value)}
-            className={`px-5 py-2 rounded-full text-sm font-medium border transition-all focus:outline-none ${filter === f.value ? "bg-blue-600 text-white border-blue-600 shadow" : "bg-white text-gray-700 border-gray-200 hover:bg-gray-100"}`}
+            className={`px-4 xs:px-5 py-2 rounded-full text-xs xs:text-sm font-medium border transition-all focus:outline-none ${filter === f.value ? "bg-blue-600 text-white border-blue-600 shadow" : "bg-white text-gray-700 border-gray-200 hover:bg-gray-100"}`}
           >
             {f.label}
           </button>
         ))}
       </div>
       {/* Gallery grid */}
-      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
+      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-5 xs:gap-8">
         <AnimatePresence>
           {filtered.map((exp, i) => (
             <motion.div
@@ -83,12 +83,12 @@ export default function Gallery() {
               exit={{ opacity: 0, y: 30 }}
               transition={{ duration: 0.5, delay: i * 0.07, ease: "easeOut" }}
             >
-              <div className="relative w-full h-48">
+              <div className="relative w-full h-40 xs:h-48">
                 <Image src={exp.image} alt={exp.title} fill className="object-cover w-full h-full" />
               </div>
-              <div className="p-5 flex-1 flex flex-col">
-                <div className="font-semibold text-lg text-gray-900 mb-1">{exp.title}</div>
-                <div className="text-gray-600 text-sm mb-3">{exp.desc}</div>
+              <div className="p-4 xs:p-5 flex-1 flex flex-col">
+                <div className="font-semibold text-base xs:text-lg text-gray-900 mb-1">{exp.title}</div>
+                <div className="text-gray-600 text-xs xs:text-sm mb-2 xs:mb-3">{exp.desc}</div>
                 <span className={`inline-block px-3 py-1 rounded-full text-xs font-medium ${exp.category === "Water Activities" ? "bg-blue-100 text-blue-700" : "bg-green-100 text-green-700"}`}>
                   {exp.category}
                 </span>

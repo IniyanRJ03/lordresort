@@ -64,9 +64,9 @@ export default function Location() {
           <div className="rounded-2xl overflow-hidden shadow-lg w-full h-[160px] xs:h-[220px] sm:h-[320px] relative">
             <Image src="/home/2.jpg" alt="Resort location" fill className="object-cover w-full h-full" />
           </div>
-          <div className="relative w-full flex flex-col xs:flex-row justify-center items-center gap-3 xs:gap-4 -mt-6 xs:-mt-8 z-10">
+          <div className="grid grid-cols-2 gap-3 xs:gap-4 w-full max-w-md mx-auto -mt-6 xs:-mt-8 z-10 md:flex md:flex-row md:justify-center md:items-center md:gap-4 md:w-full md:max-w-none">
             {stats.map((s) => (
-              <div key={s.label} className="bg-white rounded-xl shadow px-4 xs:px-6 py-3 xs:py-4 min-w-[120px] xs:min-w-[150px] text-center border border-gray-100">
+              <div key={s.label} className="bg-white rounded-xl shadow px-4 xs:px-6 py-4 flex flex-col items-center min-w-0 text-center border border-gray-100 md:min-w-[150px] md:py-4 md:px-6">
                 <div className="text-xs text-gray-500 mb-1">{s.label}</div>
                 <div className="text-base xs:text-lg font-semibold text-blue-900">{s.value}</div>
               </div>

@@ -49,15 +49,15 @@ export default function Heritage() {
       </div>
       {/* Right: Images */}
       <div className="relative flex justify-center items-center mt-8 md:mt-0">
-        <div className="rounded-2xl overflow-hidden shadow-lg w-[220px] xs:w-[280px] sm:w-[340px] h-[140px] xs:h-[200px] sm:h-[260px] relative">
+        <div className="rounded-2xl overflow-hidden shadow-lg w-[320px] xs:w-[380px] sm:w-[440px] h-[200px] xs:h-[260px] sm:h-[320px] relative transition-all duration-300">
           <Image src="/home/1.jpg" alt="Main heritage" fill className="object-cover w-full h-full" />
         </div>
-        {/* Top right small image */}
-        <div className="absolute top-[-18px] xs:top-[-24px] sm:top-[-32px] right-[-18px] xs:right-[-24px] sm:right-[-32px] w-[70px] xs:w-[100px] sm:w-[140px] h-[50px] xs:h-[70px] sm:h-[100px] rounded-xl overflow-hidden shadow-lg border-4 border-white">
+        {/* Top right small image - hidden on mobile */}
+        <div className="hidden md:block absolute top-[-18px] xs:top-[-24px] sm:top-[-32px] right-[-18px] xs:right-[-24px] sm:right-[-32px] w-[70px] xs:w-[100px] sm:w-[140px] h-[50px] xs:h-[70px] sm:h-[100px] rounded-xl overflow-hidden shadow-lg border-4 border-white">
           <Image src="/home/2.jpg" alt="Heritage detail 1" fill className="object-cover w-full h-full" />
         </div>
-        {/* Bottom left small image */}
-        <div className="absolute bottom-[-18px] xs:bottom-[-24px] sm:bottom-[-32px] left-[-18px] xs:left-[-24px] sm:left-[-32px] w-[60px] xs:w-[80px] sm:w-[120px] h-[40px] xs:h-[60px] sm:h-[90px] rounded-xl overflow-hidden shadow-lg border-4 border-white">
+        {/* Bottom left small image - hidden on mobile */}
+        <div className="hidden md:block absolute bottom-[-18px] xs:bottom-[-24px] sm:bottom-[-32px] left-[-18px] xs:left-[-24px] sm:left-[-32px] w-[60px] xs:w-[80px] sm:w-[120px] h-[40px] xs:h-[60px] sm:h-[90px] rounded-xl overflow-hidden shadow-lg border-4 border-white">
           <Image src="/home/3.jpg" alt="Heritage detail 2" fill className="object-cover w-full h-full" />
         </div>
       </div>

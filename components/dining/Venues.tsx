@@ -46,23 +46,23 @@ export default function Venues() {
         <h3 className="text-2xl font-light text-blue-700 mb-4">Memorable Experiences</h3>
         <p className="text-gray-700 max-w-2xl mx-auto mb-8">Experience a culinary journey where local ingredients meet international flavors, all set against the backdrop of the serene lagoon.</p>
       </div>
-      <div className="flex flex-col gap-16">
+      <div className="flex flex-col gap-12 xs:gap-16">
         {VENUES.map((venue, i) => (
           <motion.div
             key={venue.title}
-            className={`flex flex-col md:flex-row ${i % 2 === 1 ? 'md:flex-row-reverse' : ''} gap-8 items-center`}
+            className={`flex flex-col md:flex-row ${i % 2 === 1 ? 'md:flex-row-reverse' : ''} gap-6 xs:gap-8 items-center`}
             initial={{ opacity: 0, y: 40 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, amount: 0.2 }}
             transition={{ duration: 0.7, delay: i * 0.15, ease: "easeOut" }}
           >
-            <div className="rounded-xl overflow-hidden shadow-lg w-full md:w-1/2 h-64 relative">
+            <div className="rounded-xl overflow-hidden shadow-lg w-full md:w-1/2 h-40 xs:h-64 relative">
               <Image src={venue.image} alt={venue.title} fill className="object-cover w-full h-full" />
             </div>
             <div className="w-full md:w-1/2">
-              <div className="font-semibold text-xl text-gray-900 mb-1">{venue.title}</div>
-              <div className="text-gray-700 mb-3">{venue.desc}</div>
-              <ul className="list-disc pl-5 space-y-1 text-gray-800">
+              <div className="font-semibold text-lg xs:text-xl text-gray-900 mb-1">{venue.title}</div>
+              <div className="text-gray-700 mb-2 xs:mb-3 text-sm xs:text-base">{venue.desc}</div>
+              <ul className="list-disc pl-5 space-y-1 text-gray-800 text-xs xs:text-sm">
                 {venue.details.map((d, j) => (
                   <li key={j}>{d}</li>
                 ))}

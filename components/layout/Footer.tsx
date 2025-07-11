@@ -1,4 +1,6 @@
 import Image from "next/image";
+import { FaFacebookF, FaInstagram, FaXTwitter, FaGoogle } from "react-icons/fa6";
+import { FaCcVisa, FaCcMastercard, FaCcPaypal } from "react-icons/fa";
 
 const exploreLinks = [
   { name: "About", href: "#" },
@@ -18,11 +20,18 @@ const hotelAreas = [
   { name: "Kalkudah", href: "#" },
   { name: "Pasikudah", href: "#" },
 ];
-const socialIcons = [
-  { name: "Facebook", src: "/facebook.svg", href: "#" },
-  { name: "Instagram", src: "/instagram.svg", href: "#" },
-  { name: "X", src: "/x.svg", href: "#" },
-  { name: "Google", src: "/google.svg", href: "#" },
+
+const socialLinks = [
+  { name: "Facebook", href: "#", icon: <FaFacebookF className="w-5 h-5" /> },
+  { name: "Instagram", href: "#", icon: <FaInstagram className="w-5 h-5" /> },
+  { name: "X", href: "#", icon: <FaXTwitter className="w-5 h-5" /> },
+  { name: "Google", href: "#", icon: <FaGoogle className="w-5 h-5" /> },
+];
+
+const paymentIcons = [
+  { name: "Visa", icon: <FaCcVisa className="w-7 h-7 text-[#1a1f71]" /> },
+  { name: "Mastercard", icon: <FaCcMastercard className="w-7 h-7 text-[#eb001b]" /> },
+  { name: "Paypal", icon: <FaCcPaypal className="w-7 h-7 text-[#003087]" /> },
 ];
 
 export default function Footer() {
@@ -42,9 +51,9 @@ export default function Footer() {
             A serene retreat nestled alongside a pristine lagoon in Trincomalee, offering the perfect balance of relaxation and adventure.
           </p>
           <div className="flex gap-3 mt-2">
-            {socialIcons.map((icon) => (
-              <a key={icon.name} href={icon.href} aria-label={icon.name}>
-                <Image src={icon.src} alt={icon.name} width={20} height={20} />
+            {socialLinks.map((icon) => (
+              <a key={icon.name} href={icon.href} aria-label={icon.name} className="text-gray-500 hover:text-blue-600 transition-colors">
+                {icon.icon}
               </a>
             ))}
           </div>
@@ -95,9 +104,11 @@ export default function Footer() {
         <span>© 2025 LORD Resort. All rights reserved.</span>
         <div className="flex gap-2 items-center">
           <span>We accept:</span>
-          <Image src="/visa.svg" alt="Visa" width={28} height={18} />
-          <Image src="/mastercard.svg" alt="Mastercard" width={28} height={18} />
-          <Image src="/paypal.svg" alt="Paypal" width={28} height={18} />
+          {paymentIcons.map((icon) => (
+            <span key={icon.name} title={icon.name} className="flex items-center">
+              {icon.icon}
+            </span>
+          ))}
         </div>
       </div>
     </footer>
