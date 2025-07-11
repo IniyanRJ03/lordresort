@@ -39,20 +39,12 @@ const IMAGES = [
 
 const cardVariants = {
   hidden: { opacity: 0, y: 40 },
-  visible: (i: number) => ({
-    opacity: 1,
-    y: 0,
-    transition: { delay: i * 0.12, duration: 0.6, ease: "easeOut" },
-  }),
+  visible: { opacity: 1, y: 0 },
 };
 
 const imageVariants = {
   hidden: { opacity: 0, scale: 0.95 },
-  visible: (i: number) => ({
-    opacity: 1,
-    scale: 1,
-    transition: { delay: i * 0.15 + 0.2, duration: 0.7, ease: "easeOut" },
-  }),
+  visible: { opacity: 1, scale: 1 },
 };
 
 export default function Amenities() {
@@ -77,7 +69,7 @@ export default function Amenities() {
               viewport={{ once: true, amount: 0.2 }}
               variants={cardVariants}
               whileHover={{ scale: 1.05, boxShadow: "0 8px 32px rgba(0,0,0,0.12)" }}
-              transition={{ type: "spring", stiffness: 260, damping: 18 }}
+              transition={{ type: "spring", stiffness: 260, damping: 18, delay: i * 0.12, duration: 0.6, ease: "easeOut" }}
             >
               <div>{a.icon}</div>
               <div>
@@ -99,7 +91,7 @@ export default function Amenities() {
               viewport={{ once: true, amount: 0.2 }}
               variants={imageVariants}
               whileHover={{ scale: 1.06 }}
-              transition={{ type: "spring", stiffness: 200, damping: 18 }}
+              transition={{ type: "spring", stiffness: 200, damping: 18, delay: i * 0.15 + 0.2, duration: 0.7, ease: "easeOut" }}
             >
               <Image src={img} alt={`Room amenity ${i+1}`} fill className="object-cover w-full h-full transition-transform duration-300" />
             </motion.div>
