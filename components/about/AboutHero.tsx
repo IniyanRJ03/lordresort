@@ -31,21 +31,6 @@ export default function AboutHero() {
         <p className="text-gray-100 text-base xs:text-lg font-medium mb-6 xs:mb-8 drop-shadow max-w-xs xs:max-w-md sm:max-w-2xl">
           Discover a sanctuary where pristine waters meet world-class hospitality, creating moments that transcend the ordinary.
         </p>
-        {/* Centered action buttons */}
-        <div className="flex flex-col xs:flex-row justify-center items-center gap-3 xs:gap-4 mb-6">
-          <a
-            href="#"
-            className="bg-white text-gray-900 rounded-full px-6 py-2.5 xs:px-8 xs:py-3 font-medium text-base shadow hover:bg-gray-100 transition text-center"
-          >
-            Book Your Stay
-          </a>
-          <a
-            href="#"
-            className="border border-white text-white rounded-full px-6 py-2.5 xs:px-8 xs:py-3 font-medium text-base shadow hover:bg-white/10 transition text-center"
-          >
-            Explore Experiences
-          </a>
-        </div>
         {/* Venues row (reusing images as highlights) */}
         <div className="flex gap-3 xs:gap-4 overflow-x-auto pb-2 scrollbar-thin scrollbar-thumb-gray-300">
           {VENUES.map((venue, i) => (
