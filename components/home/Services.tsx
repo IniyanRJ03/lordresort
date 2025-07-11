@@ -88,47 +88,47 @@ export default function Services() {
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, amount: 0.3 }}
       transition={{ duration: 0.7, ease: "easeOut" }}
-      className="bg-white max-w-6xl mx-auto px-4 py-20"
+      className="bg-white max-w-6xl mx-auto px-3 sm:px-4 py-10 sm:py-20"
     >
       <span className="uppercase text-xs tracking-widest text-gray-500 font-semibold mb-2 block">Amenities & Services</span>
-      <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-8 leading-tight">Every detail.<br />Thoughtfully considered.</h2>
+      <h2 className="text-2xl xs:text-3xl sm:text-4xl md:text-5xl font-bold text-gray-900 mb-6 sm:mb-8 leading-tight">Every detail.<br />Thoughtfully considered.</h2>
       {/* Tabs */}
-      <div className="flex gap-3 mb-10">
+      <div className="flex flex-wrap gap-2 sm:gap-3 mb-6 sm:mb-10">
         {TABS.map((t, i) => (
           <button
             key={t.label}
             onClick={() => setActive(i)}
-            className={`px-6 py-2 rounded-full text-sm font-medium border transition-all ${active === i ? "bg-gray-100 text-gray-900 border-gray-300 shadow" : "bg-white text-gray-500 border-transparent hover:bg-gray-50"}`}
+            className={`px-4 sm:px-6 py-2 rounded-full text-sm font-medium border transition-all ${active === i ? "bg-gray-100 text-gray-900 border-gray-300 shadow" : "bg-white text-gray-500 border-transparent hover:bg-gray-50"}`}
           >
             {t.label}
           </button>
         ))}
       </div>
       {/* Content */}
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-10 items-center">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-8 sm:gap-10 items-center">
         {/* Left: Text */}
         <div>
-          <h3 className="text-xl font-semibold text-gray-800 mb-2">{tab.content.title}</h3>
-          <p className="text-gray-700 mb-4">{tab.content.desc}</p>
+          <h3 className="text-lg sm:text-xl font-semibold text-gray-800 mb-1 sm:mb-2">{tab.content.title}</h3>
+          <p className="text-gray-700 mb-3 sm:mb-4 text-base sm:text-lg">{tab.content.desc}</p>
           {tab.content.features.map((f) => (
-            <div key={f.title} className="mb-4">
-              <div className="font-medium text-gray-900">{f.title}</div>
-              <div className="text-gray-600 text-sm">{f.desc}</div>
+            <div key={f.title} className="mb-2 sm:mb-4">
+              <div className="font-medium text-gray-900 text-base sm:text-lg">{f.title}</div>
+              <div className="text-gray-600 text-sm sm:text-base">{f.desc}</div>
             </div>
           ))}
-          <a href="#" className="inline-flex items-center gap-2 text-gray-900 font-medium mt-2 hover:underline group">
+          <a href="#" className="inline-flex items-center gap-2 text-gray-900 font-medium mt-2 hover:underline group text-base sm:text-lg">
             Learn more
             <span className="inline-block group-hover:translate-x-1 transition-transform">→</span>
           </a>
         </div>
         {/* Right: Image */}
-        <div className="rounded-2xl overflow-hidden shadow-lg">
+        <div className="rounded-2xl overflow-hidden shadow-lg w-full max-w-xs xs:max-w-sm sm:max-w-md mx-auto md:mx-0">
           <Image
             src={tab.content.image}
             alt={tab.content.title}
             width={500}
             height={340}
-            className="object-cover w-full h-[320px]"
+            className="object-cover w-full h-[180px] xs:h-[220px] sm:h-[320px]"
           />
         </div>
       </div>

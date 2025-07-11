@@ -13,6 +13,7 @@ const navLinks = [
 
 export default function Header() {
   const [scrolled, setScrolled] = useState(false);
+  const [menuOpen, setMenuOpen] = useState(false);
 
   useEffect(() => {
     const onScroll = () => {
@@ -21,6 +22,18 @@ export default function Header() {
     window.addEventListener("scroll", onScroll);
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
+
+  // Prevent background scroll when menu is open
+  useEffect(() => {
+    if (menuOpen) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "";
+    }
+    return () => {
+      document.body.style.overflow = "";
+    };
+  }, [menuOpen]);
 
   return (
     <header
@@ -39,7 +52,7 @@ export default function Header() {
             <span className="text-sm text-gray-700">The Place For Relax Stay</span>
           </div>
         </div>
-        {/* Navigation */}
+        {/* Desktop Navigation */}
         <nav className="hidden md:flex gap-10 items-center text-base">
           {navLinks.map((link) => (
             <a
@@ -51,10 +64,10 @@ export default function Header() {
             </a>
           ))}
         </nav>
-        {/* Book Now Button */}
+        {/* Book Now Button (Desktop) */}
         <a
           href="#"
-          className={`ml-4 px-8 py-3 rounded-full font-semibold shadow transition-colors duration-500 text-base border ${
+          className={`ml-4 px-8 py-3 rounded-full font-semibold shadow transition-colors duration-500 text-base border hidden md:inline-block ${
             scrolled
               ? "bg-[#0072bc] text-white border-[#0072bc]"
               : "bg-white text-gray-900 border-white hover:bg-gray-100"
@@ -62,7 +75,49 @@ export default function Header() {
         >
           Book Now
         </a>
+        {/* Hamburger Icon (Mobile) */}
+        <button
+          className="md:hidden ml-auto z-50 p-2"
+          aria-label={menuOpen ? "Close menu" : "Open menu"}
+          onClick={() => setMenuOpen((open) => !open)}
+        >
+          {menuOpen ? (
+            // Close icon
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor" className="w-8 h-8 text-gray-900">
+              <path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" />
+            </svg>
+          ) : (
+            // Hamburger icon
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor" className="w-8 h-8 text-gray-900">
+              <path strokeLinecap="round" strokeLinejoin="round" d="M4 8h16M4 16h16" />
+            </svg>
+          )}
+        </button>
       </div>
+      {/* Mobile Menu */}
+      {menuOpen && (
+        <div
+          className="fixed left-0 w-full h-[calc(100vh-80px)] bg-white top-[80px] z-40 flex flex-col items-center justify-center gap-8 transition-all duration-300 md:hidden"
+        >
+          {navLinks.map((link) => (
+            <a
+              key={link.name}
+              href={link.href}
+              className="text-2xl font-semibold text-gray-900 hover:text-[#0072bc] transition-colors"
+              onClick={() => setMenuOpen(false)}
+            >
+              {link.name}
+            </a>
+          ))}
+          <a
+            href="#"
+            className="mt-6 px-8 py-3 rounded-full font-semibold shadow transition-colors duration-500 text-lg border bg-[#0072bc] text-white border-[#0072bc]"
+            onClick={() => setMenuOpen(false)}
+          >
+            Book Now
+          </a>
+        </div>
+      )}
     </header>
   );
 } 

@@ -57,20 +57,20 @@ const imageVariants = {
 
 export default function Amenities() {
   return (
-    <section className="max-w-7xl mx-auto px-4 py-20">
-      <div className="mb-10">
+    <section className="max-w-7xl mx-auto px-3 xs:px-4 sm:px-6 py-10 xs:py-14 sm:py-20">
+      <div className="mb-8 xs:mb-10">
         <span className="uppercase text-xs tracking-widest text-blue-600 font-semibold mb-2 block">Room Amenities</span>
-        <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-2 leading-tight">Every Detail</h2>
-        <h3 className="text-2xl font-light text-blue-700 mb-4">Crafted for Comfort</h3>
-        <p className="text-gray-700 max-w-2xl mb-8">Each of our accommodations comes fully equipped with premium amenities, ensuring a comfortable and luxurious stay.</p>
+        <h2 className="text-2xl xs:text-3xl sm:text-4xl md:text-5xl font-bold text-gray-900 mb-2 leading-tight">Every Detail</h2>
+        <h3 className="text-lg xs:text-xl sm:text-2xl font-light text-blue-700 mb-3 xs:mb-4">Crafted for Comfort</h3>
+        <p className="text-gray-700 max-w-xs xs:max-w-md sm:max-w-2xl mb-6 xs:mb-8 text-base sm:text-lg">Each of our accommodations comes fully equipped with premium amenities, ensuring a comfortable and luxurious stay.</p>
       </div>
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-10 items-start">
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-6 xs:gap-10 items-start">
         {/* Amenities grid */}
-        <div className="md:col-span-2 grid grid-cols-1 sm:grid-cols-2 gap-6">
+        <div className="md:col-span-2 grid grid-cols-1 xs:grid-cols-2 gap-4 xs:gap-6 mb-6 md:mb-0">
           {AMENITIES.map((a, i) => (
             <motion.div
               key={i}
-              className="flex items-start gap-4 bg-white rounded-xl shadow p-5 group"
+              className="flex items-start gap-3 xs:gap-4 bg-white rounded-xl shadow p-4 xs:p-5 group"
               custom={i}
               initial="hidden"
               whileInView="visible"
@@ -81,14 +81,14 @@ export default function Amenities() {
             >
               <div>{a.icon}</div>
               <div>
-                <div className="font-semibold text-gray-900 mb-1">{a.title}</div>
-                <div className="text-gray-600 text-sm">{a.desc}</div>
+                <div className="font-semibold text-gray-900 mb-1 text-base xs:text-lg">{a.title}</div>
+                <div className="text-gray-600 text-xs xs:text-sm">{a.desc}</div>
               </div>
             </motion.div>
           ))}
         </div>
         {/* Images grid */}
-        <div className="grid grid-cols-2 gap-4">
+        <div className="grid grid-cols-2 gap-3 xs:gap-4">
           {IMAGES.map((img, i) => (
             <motion.div
               key={i}
